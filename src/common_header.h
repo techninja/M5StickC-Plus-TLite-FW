@@ -11,7 +11,7 @@ static constexpr uint8_t frame_width  = 32;
 static constexpr uint8_t frame_height = 24;
 
 static constexpr inline float convertRawToCelsius(int32_t rawdata) {
-    return ((float)rawdata / 128) - 64.0f;
+    return (9.0f / 5.0f) * (((float)rawdata / 128) - 64.0f) + 32.0f;
 }
 static constexpr inline int32_t convertCelsiusToRaw(float temperature) {
     return (temperature + 64) * 128;
